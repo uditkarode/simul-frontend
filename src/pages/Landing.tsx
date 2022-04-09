@@ -6,7 +6,7 @@ function Landing() {
     <>
       <div id="text">
         <p id="heading">
-          taskr.live is
+          Simul is
           <br />
           coming soon!
         </p>
