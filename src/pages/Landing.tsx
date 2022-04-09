@@ -3,7 +3,7 @@ import Spacer from "../components/Spacer";
 
 function Landing() {
   return (
-    <div id="content">
+    <>
       <div id="text">
         <p id="heading">
           taskr.live is
@@ -13,7 +13,7 @@ function Landing() {
         <Spacer height={37} />
         <p id="subheading">stay tuned for more updates</p>
       </div>
-    </div>
+    </>
   );
 }
 
