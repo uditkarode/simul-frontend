@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@tanstack/react-location': ^3.7.4
   '@types/react': ^17.0.33
   '@types/react-dom': ^17.0.10
   '@vitejs/plugin-react': ^1.0.7
@@ -10,6 +11,7 @@ specifiers:
   vite: ^2.9.0
 
 dependencies:
+  '@tanstack/react-location': 3.7.4_react-dom@17.0.2+react@17.0.2
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
 
@@ -247,6 +249,13 @@ packages:
       '@babel/types': 7.17.0
     dev: true
 
+  /@babel/runtime/7.17.9:
+    resolution: {integrity: sha512-lSiBBvodq29uShpWGNbgFdKYNiFDo5/HIYsaCEY9ff4sb10x9jizo2+pRrSyF4jKZCXqgzuqBOQKbUm90gQwJg==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.13.9
+    dev: false
+
   /@babel/template/7.16.7:
     resolution: {integrity: sha512-I8j/x8kHUrbYRTUxXrrMbfCa7jxkE7tZre39x3kjr9hvI82cK1FfqLygotcWN5kdPGWcLdWMHpSBavse5tWw3w==}
     engines: {node: '>=6.9.0'}
@@ -305,6 +314,19 @@ packages:
       estree-walker: 2.0.2
       picomatch: 2.3.1
     dev: true
+
+  /@tanstack/react-location/3.7.4_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-6rH2vNHGr0uyeUz5ZHvWMYjeYKGgIKFzvs5749QtnS9f+FU7t7fQE0hKZAzltBZk82LT7iYbcHBRyUg2lW13VA==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      '@babel/runtime': 7.17.9
+      history: 5.3.0
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
@@ -668,6 +690,12 @@ packages:
       function-bind: 1.1.1
     dev: true
 
+  /history/5.3.0:
+    resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==}
+    dependencies:
+      '@babel/runtime': 7.17.9
+    dev: false
+
   /is-core-module/2.8.1:
     resolution: {integrity: sha512-SdNCUs284hr40hFTFP6l0IfZ/RSrMXF3qgoRHd3/79unUTvrFO/JoXwkGm+5J/Oe3E/b5GsnG330uUNgRpu1PA==}
     dependencies:
@@ -759,6 +787,10 @@ packages:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
+    dev: false
+
+  /regenerator-runtime/0.13.9:
+    resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}
     dev: false
 
   /resolve/1.22.0:
