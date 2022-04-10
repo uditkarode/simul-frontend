@@ -31,3 +31,7 @@ code {
 p {
   color: #242323;
 }
+
+* {
+  margin: 0;
+}
