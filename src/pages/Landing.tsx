@@ -5,12 +5,18 @@ import { ReactComponent as Identifier } from "../../assets/svg/identifier.svg";
 import { css } from "@emotion/css";
 import TextField from "../components/TextField";
 import Spacer from "../components/Spacer";
+import BlackButton from "../components/BlackButton";
+import { reactStyles } from "../utils";
 
 function Landing() {
   const centreContent = css`
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    position: absolute;
     align-items: center;
     justify-content: center;
   `;
@@ -18,6 +24,8 @@ function Landing() {
   const fun = css`
     font-weight: 700;
     color: #502c56;
+    padding-left: 2;
+    padding-right: 2;
   `;
 
   return (
@@ -46,6 +54,12 @@ function Landing() {
           shortcut={["Ctrl", "R"]}
           iconStyle={{ marginTop: 2 }}
         />
+
+        <div style={{ ...reactStyles.rowFlex, marginTop: 40 }}>
+          <BlackButton text="Let's go!" />
+          <Spacer width={15} />
+          <BlackButton text="Create?" />
+        </div>
       </div>
     </>
   );
