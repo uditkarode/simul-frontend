@@ -32,6 +32,10 @@ p {
   color: #242323;
 }
 
+::placeholder {
+  color: rgba(134, 130, 130, 0.57);
+}
+
 * {
   margin: 0;
 }

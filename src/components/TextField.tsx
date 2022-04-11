@@ -1,6 +1,7 @@
 import { css } from "@emotion/css";
 import { CSSProperties } from "react";
 import { Icon } from "../utils";
+import Spacer from "./Spacer";
 
 type Props = {
   icon: Icon;
@@ -27,11 +28,15 @@ function TextField(p: Props) {
     align-items: center;
   `;
 
-  const hint = css`
-    margin-left: 25px;
+  const input = css`
+    padding-left: 25px;
     font-weight: 400;
     font-size: 26px;
-    color: rgba(134, 130, 130, 0.57);
+    color: #353535;
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    outline: none;
   `;
 
   const shortcutMinor = css`
@@ -43,7 +48,7 @@ function TextField(p: Props) {
 
   const shortcutMajor = css`
     font-size: 25px;
-    color: #474747;
+    color: #505050;
     font-weight: 600;
     opacity: 70%;
   `;
@@ -52,10 +57,10 @@ function TextField(p: Props) {
     <div className={s}>
       <div className={wrapper}>
         <p.icon style={{ opacity: "90%", ...(p.iconStyle ?? {}) }} />
-        <p className={hint}>{p.hint}</p>
-        <p style={{ marginLeft: "auto", marginTop: 1 }}>
+        <input className={input} placeholder={p.hint} />
+        <p style={{ marginTop: 1 }}>
           <span className={shortcutMinor}>{p.shortcut[0]}</span>
-          {/* shortcut space */}{" "}
+          &nbsp;
           <span className={shortcutMajor}>{p.shortcut[1]}</span>
         </p>
       </div>
