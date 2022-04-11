@@ -19,6 +19,7 @@ function Landing() {
     position: absolute;
     align-items: center;
     justify-content: center;
+    padding-bottom: 6%;
   `;
 
   const fun = css`
