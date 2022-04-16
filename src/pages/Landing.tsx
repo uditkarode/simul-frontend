@@ -1,4 +1,3 @@
-import "../styles/Landing.css";
 import { ReactComponent as Menu } from "../../assets/svg/menu.svg";
 import { ReactComponent as User } from "../../assets/svg/user.svg";
 import { ReactComponent as Identifier } from "../../assets/svg/identifier.svg";
@@ -6,7 +5,7 @@ import { css } from "@emotion/css";
 import TextField from "../components/TextField";
 import Spacer from "../components/Spacer";
 import BlackButton from "../components/BlackButton";
-import { reactStyles } from "../utils";
+import { ulroot, reactStyles } from "../utils";
 
 function Landing() {
   const centreContent = css`
@@ -29,8 +28,22 @@ function Landing() {
     padding-right: 2;
   `;
 
+  const lroot = css`
+    background: conic-gradient(
+      from 270deg at 53.95% 100%,
+      rgba(169, 171, 196, 0.72) 0deg,
+      rgba(181, 166, 199, 0.707) 24.38deg,
+      rgba(177, 161, 198, 0.6) 52.5deg,
+      rgba(174, 137, 203, 0.47) 112.5deg,
+      rgba(192, 158, 201, 0.58) 165deg,
+      rgba(202, 106, 158, 0.45) 208.13deg,
+      rgba(169, 171, 196, 0.72) 360deg
+    );
+    ${ulroot}
+  `;
+
   return (
-    <div id="lroot">
+    <div className={lroot}>
       <Menu style={{ marginTop: 31, marginLeft: 36 }} />
 
       {/* Wrapper div for the centre content */}

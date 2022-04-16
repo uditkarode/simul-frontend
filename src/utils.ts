@@ -1,17 +1,18 @@
 import { ReactComponent } from "*.svg";
+import { css } from "@emotion/css";
 import { CSSProperties } from "react";
 
 export type Icon = typeof ReactComponent;
 
-const css = (v: CSSProperties) => v;
+const csss = (v: CSSProperties) => v;
 
 export const reactStyles = {
-  colFlex: css({
+  colFlex: csss({
     display: "flex",
     flexDirection: "column",
   }),
-  rowFlex: css({ display: "flex", flexDirection: "row" }),
-  centerAll: css({
+  rowFlex: csss({ display: "flex", flexDirection: "row" }),
+  centerAll: csss({
     alignItems: "center",
     justifyContent: "center",
   }),
@@ -31,3 +32,10 @@ export const cssStyles = {
     justify-content: center;
   `,
 };
+
+// local root div style (root component for all screens)
+export const ulroot = css`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
