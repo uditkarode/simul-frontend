@@ -61,7 +61,7 @@ function Video() {
   const bottom = css`
     ${cssStyles.bottom}
     ${cssStyles.colFlex}
-    padding-bottom: 50px;
+    padding-bottom: 35px;
     padding-left: 30px;
     padding-right: 30px;
     width: 100%;
@@ -140,17 +140,40 @@ function Video() {
           <p className={duration}>14:52</p>
         </div>
 
+        <Spacer height={18} />
+
         {/* player controls */}
-        <div style={{ ...reactStyles.rowFlex, alignItems: "center" }}>
+        <div
+          style={{
+            ...reactStyles.rowFlex,
+            alignItems: "center",
+            marginLeft: 6,
+            marginRight: 10,
+          }}
+        >
           <SkipPrevious />
+          <Spacer width={10} />
           <FastRewind />
+          <Spacer width={20} />
           <Play />
+          <Spacer width={20} />
           <FastForwind />
+          <Spacer width={10} />
           <SkipNext />
+          <Spacer width={10} />
           <Circle />
-          <p className={duration}>ends at 3:41am</p>
+          <Spacer width={10} />
+          <p className={duration}>
+            <span style={{ fontWeight: 400 }}>ends at </span>3:41am
+          </p>
+
+          <div style={{ flexGrow: 1 }} />
+
           <Volume />
+          {/* todo place slider */}
+          <Spacer width={10} />
           <Chat />
+          <Spacer width={18} />
           <FullScreen />
         </div>
       </div>
