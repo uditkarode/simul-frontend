@@ -18,9 +18,6 @@ function Video() {
     position: absolute;
     left: 0;
     top: 0;
-    background-color: #393737;
-    height: 100%;
-    width: 100%;
     z-index: 1;
   `;
 
@@ -93,10 +90,17 @@ function Video() {
     font-weight: 500;
   `;
 
+  const lroot = css`
+    ${ulroot}
+    background-color: black;
+  `;
+
   return (
-    <div className={ulroot}>
+    <div className={lroot}>
       {/* Video Container */}
-      <div className={video} />
+      <video height="100%" width="100%" className={video}>
+        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
+      </video>
 
       {/* gradients to add visibility */}
       <div className={gradientTop} />
