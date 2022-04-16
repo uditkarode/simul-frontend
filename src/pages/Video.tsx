@@ -1,8 +1,16 @@
 import { css } from "@emotion/css";
-import { cssStyles, ulroot } from "../utils";
+import { cssStyles, reactStyles, ulroot } from "../utils";
 import { ReactComponent as Back } from "../../assets/svg/back.svg";
 import { ReactComponent as Circle } from "../../assets/svg/circle.svg";
 import { ReactComponent as Users } from "../../assets/svg/users.svg";
+import { ReactComponent as SkipPrevious } from "../../assets/svg/skip_previous.svg";
+import { ReactComponent as FastRewind } from "../../assets/svg/fast_rewind.svg";
+import { ReactComponent as Play } from "../../assets/svg/play.svg";
+import { ReactComponent as FastForwind } from "../../assets/svg/fast_forwind.svg";
+import { ReactComponent as SkipNext } from "../../assets/svg/skip_next.svg";
+import { ReactComponent as Chat } from "../../assets/svg/chat.svg";
+import { ReactComponent as FullScreen } from "../../assets/svg/fullscreen.svg";
+import { ReactComponent as Volume } from "../../assets/svg/volume.svg";
 import Spacer from "../components/Spacer";
 
 function Video() {
@@ -13,7 +21,7 @@ function Video() {
     background-color: #393737;
     height: 100%;
     width: 100%;
-    z-index: -1;
+    z-index: 1;
   `;
 
   const gradient = (degs: number) => css`
@@ -22,6 +30,7 @@ function Video() {
       rgba(0, 0, 0, 0.8) 0%,
       rgba(0, 0, 0, 0) 100%
     );
+    z-index: 2;
   `;
 
   const gradientTop = css`
@@ -33,7 +42,7 @@ function Video() {
 
   const gradientBottom = css`
     ${cssStyles.bottom}
-    height: 150px;
+    height: 120px;
     width: 100%;
     ${gradient(0)}
   `;
@@ -42,20 +51,21 @@ function Video() {
     ${cssStyles.top}
     ${cssStyles.rowFlex}
     align-items: center;
-    padding-top: 50px;
+    padding-top: 40px;
     padding-left: 50px;
     padding-right: 50px;
     width: 100%;
+    z-index: 3;
   `;
 
   const bottom = css`
     ${cssStyles.bottom}
-    ${cssStyles.rowFlex}
-    align-items: center;
+    ${cssStyles.colFlex}
     padding-bottom: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
     width: 100%;
+    z-index: 3;
   `;
 
   const epn = css`
@@ -77,13 +87,22 @@ function Video() {
     opacity: 80%;
   `;
 
+  const duration = css`
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 500;
+  `;
+
   return (
     <div className={ulroot}>
+      {/* Video Container */}
       <div className={video} />
 
+      {/* gradients to add visibility */}
       <div className={gradientTop} />
       <div className={gradientBottom} />
 
+      {/* Top part of the player */}
       <div className={top}>
         <Back />
         <Spacer width={45} />
@@ -104,7 +123,37 @@ function Video() {
         <p className={users}>4</p>
       </div>
 
-      <div className={bottom}></div>
+      {/* Bottom part of the player */}
+      <div className={bottom}>
+        {/* video seekbar and duration */}
+        <div style={{ ...reactStyles.rowFlex, alignItems: "center" }}>
+          <p className={duration}>2:16</p>
+          <div
+            style={{
+              backgroundColor: "#fbfbfb",
+              height: 20,
+              flexGrow: 1,
+              marginLeft: 15,
+              marginRight: 15,
+            }}
+          ></div>
+          <p className={duration}>14:52</p>
+        </div>
+
+        {/* player controls */}
+        <div style={{ ...reactStyles.rowFlex, alignItems: "center" }}>
+          <SkipPrevious />
+          <FastRewind />
+          <Play />
+          <FastForwind />
+          <SkipNext />
+          <Circle />
+          <p className={duration}>ends at 3:41am</p>
+          <Volume />
+          <Chat />
+          <FullScreen />
+        </div>
+      </div>
     </div>
   );
 }
