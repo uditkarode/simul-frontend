@@ -128,15 +128,11 @@ function Video() {
         {/* video seekbar and duration */}
         <div style={{ ...reactStyles.rowFlex, alignItems: "center" }}>
           <p className={duration}>2:16</p>
-          <div
-            style={{
-              backgroundColor: "#fbfbfb",
-              height: 20,
-              flexGrow: 1,
-              marginLeft: 15,
-              marginRight: 15,
-            }}
-          ></div>
+          <input
+            type="range"
+            style={{ flexGrow: 1, marginLeft: 10, marginRight: 12 }}
+            defaultValue={0}
+          />
           <p className={duration}>14:52</p>
         </div>
 
@@ -170,8 +166,9 @@ function Video() {
           <div style={{ flexGrow: 1 }} />
 
           <Volume />
-          {/* todo place slider */}
-          <Spacer width={10} />
+          <Spacer width={5} />
+          <input type="range" />
+          <Spacer width={30} />
           <Chat />
           <Spacer width={18} />
           <FullScreen />
