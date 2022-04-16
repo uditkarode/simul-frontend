@@ -30,7 +30,7 @@ function Landing() {
   `;
 
   return (
-    <>
+    <div id="lroot">
       <Menu style={{ marginTop: 31, marginLeft: 36 }} />
 
       {/* Wrapper div for the centre content */}
@@ -62,7 +62,7 @@ function Landing() {
           <BlackButton text="Create?" />
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
