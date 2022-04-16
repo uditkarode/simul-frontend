@@ -35,14 +35,14 @@ function Video() {
 
   const gradientTop = css`
     ${cssStyles.top}
-    height: 150px;
+    height: 120px;
     width: 100%;
     ${gradient(180)}
   `;
 
   const gradientBottom = css`
     ${cssStyles.bottom}
-    height: 120px;
+    height: 150px;
     width: 100%;
     ${gradient(0)}
   `;
